@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    min-height: 100vh;
+    line-height: 1.6;
+} */
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header-section h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.header-section p {
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+/* Calculator Card */
+.calculator-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Input Section */
+.input-section {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input[type="date"]:focus {
+    outline: none;
+    border-color: #d97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+/* Calculate Button */
+.btn-calculate {
+    width: 100%;
+    background-color: #d97706;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-calculate:hover {
+    background-color: #b45309;
+}
+
+.btn-calculate:active {
+    transform: scale(0.98);
+}
+
+/* Results Section */
+.results-section {
+    display: block;
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.results-section.active {
+    display: block;
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.results-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Age Grid */
+.age-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.age-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.age-number {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #d97706;
+    line-height: 1.2;
+}
+
+.age-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Next Birthday Section */
+.next-birthday-section {
+    text-align: center;
+}
+
+.next-birthday-label {
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+}
+
+.next-birthday-value {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #d97706;
+}
+
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .header-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-section p {
+        font-size: 0.875rem;
+    }
+
+    .age-grid {
+        gap: 0.75rem;
+    }
+
+    .age-box {
+        padding: 0.75rem;
+    }
+
+    .age-number {
+        font-size: 1.5rem;
+    }
+
+    .age-label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        max-width: 100%;
+    }
+
+    .calculator-card {
+        border-radius: 0.5rem;
+    }
+
+    .input-section,
+    .results-section,
+    .fun-facts-section {
+        padding: 1rem;
+    }
+}

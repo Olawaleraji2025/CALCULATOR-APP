@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="Age.css" />
+   
+  </head>
+  <body>
+
+    <main class="container">
+      <div class="content-wrapper">
+        <div class="header-section">
+          <h1>Age Calculator</h1>
+          <p>Find out your exact age and days until next birthday</p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="input-section">
+            <div class="form-group">
+              <label>Date of Birth</label>
+              <input
+                type="date"
+                id="birthdate"
+                max=""
+              />
+            </div>
+
+            <button id="calculate-age" class="btn-calculate">
+              Calculate Age
+            </button>
+          </div>
+
+          <!-- Results Section -->
+          <div id="results" class="results-section">
+            <div class="results-header">
+              <h3>Your Age</h3>
+            </div>
+            <div class="age-grid">
+              <div class="age-box">
+                <div class="age-number" id="years">0</div>
+                <div class="age-label">Years</div>
+              </div>
+              <div class="age-box">
+                <div class="age-number" id="months">0</div>
+                <div class="age-label">Months</div>
+              </div>
+              <div class="age-box">
+                <div class="age-number" id="days">0</div>
+                <div class="age-label">Days</div>
+              </div>
+            </div>
+            <div class="next-birthday-section">
+              <p class="next-birthday-label">Next birthday in:</p>
+              <p class="next-birthday-value" id="next-birthday">-</p>
+            </div>
+          </div>
+
+         
+        </div>
+      </div> 
+    </main>
+
+    <script src="Age.js"></script>
+   
+  </body>
+</html>

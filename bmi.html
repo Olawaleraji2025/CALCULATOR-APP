@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="bmi.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <main class="container">
+      <div class="max-width-wrapper">
+        <div class="header-section">
+          <h1>BMI Calculator</h1>
+          <p class="subtitle">Calculate your Body Mass Index</p>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="unit-selector">
+              <div class="unit-selector-header">
+                <label class="label">Unit System</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      class="radio-input"
+                      name="unit"
+                      value="metric"
+                      checked
+                    />
+                    <span class="radio-text">Metric</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      class="radio-input"
+                      name="unit"
+                      value="imperial"
+                    />
+                    <span class="radio-text">Imperial</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Metric Inputs -->
+            <div id="metric-inputs" class="input-section">
+              <div class="input-group">
+                <label class="input-label">Height (cm)</label>
+                <input
+                  type="number"
+                  id="height-cm"
+                  class="input-field"
+                  placeholder="e.g. 175"
+                />
+              </div>
+              <div class="input-group">
+                <label class="input-label">Weight (kg)</label>
+                <input
+                  type="number"
+                  id="weight-kg"
+                  class="input-field"
+                  placeholder="e.g. 70"
+                />
+              </div>
+            </div>
+
+            <!-- Imperial Inputs (hidden by default) -->
+            <div id="imperial-inputs" class="input-section hidden">
+              <div class="input-group">
+                <label class="input-label">Height (ft & in)</label>
+                <div class="input-row">
+                  <input
+                    type="number"
+                    id="height-ft"
+                    class="input-field"
+                    placeholder="Feet"
+                  />
+                  <input
+                    type="number"
+                    id="height-in"
+                    class="input-field"
+                    placeholder="Inches"
+                  />
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="input-label">Weight (lbs)</label>
+                <input
+                  type="number"
+                  id="weight-lbs"
+                  class="input-field"
+                  placeholder="e.g. 150"
+                />
+              </div>
+            </div>
+
+            <button id="calculate-bmi" class="btn-calculate">
+              Calculate BMI
+            </button>
+          </div>
+
+          <!-- Results Section -->
+          <div id="results" class="results-section hidden">
+            <div class="results-header">
+              <h3>Your Results</h3>
+            </div>
+            <div class="bmi-display">
+              <div class="bmi-circle" id="bmi-circle">
+                <span class="bmi-value" id="bmi-value">0.0</span>
+              </div>
+            </div>
+            <div class="results-text">
+              <p class="bmi-category" id="bmi-category">-</p>
+              <p class="bmi-message" id="bmi-message">
+                Enter your details to calculate your BMI
+              </p>
+            </div>
+          </div>
+
+          <!-- BMI Scale -->
+          <div class="scale-section">
+            <h4>BMI Scale</h4>
+            <div class="scale-items">
+              <div class="scale-item">
+                <div class="scale-dot red"></div>
+                <span class="scale-text">Underweight (Below 18.5)</span>
+              </div>
+              <div class="scale-item">
+                <div class="scale-dot green"></div>
+                <span class="scale-text">Normal weight (18.5 - 24.9)</span>
+              </div>
+              <div class="scale-item">
+                <div class="scale-dot yellow"></div>
+                <span class="scale-text">Overweight (25 - 29.9)</span>
+              </div>
+              <div class="scale-item">
+                <div class="scale-dot red"></div>
+                <span class="scale-text">Obesity (30 and above)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="bmi.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,179 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fafb;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+/* Max Width Wrapper */
+.max-width-wrapper {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-section h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #4b5563;
+}
+
+/* Calculator Card */
+.calculator-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+/* Display Section */
+.display {
+  padding: 1rem;
+  background-color: #1f2937;
+  text-align: right;
+}
+
+.previous-operand {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  height: 1.5rem;
+  overflow-x: auto;
+}
+
+.current-operand {
+  color: white;
+  font-size: 1.875rem;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Button Grid */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background-color: #f3f4f6;
+}
+
+/* Calculator Buttons */
+.calc-btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.calc-btn:active {
+  transform: scale(0.95);
+}
+
+/* Button Colors - Gray (Numbers & Basic Operations) */
+.btn-gray {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.btn-gray:hover {
+  background-color: #d1d5db;
+}
+
+/* Button Colors - Indigo (Scientific Functions) */
+.btn-indigo {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.btn-indigo:hover {
+  background-color: #c7d2fe;
+}
+
+/* Button Colors - Primary (Equals Button) */
+.btn-primary {
+  background-color: #6366f1;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4f46e5;
+}
+
+/* Wide Button (Equals spans 2 columns) */
+.btn-wide {
+  grid-column: span 2;
+}
+
+/* Tip Section */
+.tip-section {
+  margin-top: 2rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .header-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .current-operand {
+    font-size: 1.5rem;
+  }
+  
+  .calc-btn {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .button-grid {
+    gap: 0.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .max-width-wrapper {
+    max-width: 100%;
+  }
+  
+  .calc-btn {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .current-operand {
+    font-size: 1.25rem;
+  }
+}

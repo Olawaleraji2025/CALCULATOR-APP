@@ -1,0 +1,300 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fafb;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+/* Max Width Wrapper */
+.max-width-wrapper {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-section h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #4b5563;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Unit Selector */
+.unit-selector {
+  margin-bottom: 1.5rem;
+}
+
+.unit-selector-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  color: #374151;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.radio-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-input {
+  cursor: pointer;
+  color: #10b981;
+  accent-color: #10b981;
+}
+
+.radio-text {
+  margin-left: 0.5rem;
+}
+
+/* Input Section */
+.input-section {
+  display: block;
+}
+
+.input-section.hidden {
+  display: none;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  /* ring: 2px;
+  ring-color: #10b981; */
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-row .input-field {
+  flex: 1;
+}
+
+/* Calculate Button */
+.btn-calculate {
+  width: 100%;
+  background-color: #059669;
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-calculate:hover {
+  background-color: #047857;
+}
+
+/* Results Section */
+.results-section {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.results-section.hidden {
+  display: none;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.results-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.bmi-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.bmi-circle {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid;
+  border-color: #d1d5db;
+}
+
+.bmi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.results-text {
+  text-align: center;
+}
+
+.bmi-category {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.bmi-message {
+  color: #4b5563;
+}
+
+/* BMI Scale Section */
+.scale-section {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.scale-section h4 {
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.scale-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scale-item {
+  display: flex;
+  align-items: center;
+}
+
+.scale-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.scale-dot.red {
+  background-color: #ef4444;
+}
+
+.scale-dot.green {
+  background-color: #22c55e;
+}
+
+.scale-dot.yellow {
+  background-color: #eab308;
+}
+
+.scale-text {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* BMI Category Colors */
+.bmi-circle.underweight {
+  border-color: #ef4444;
+}
+
+.bmi-circle.normal {
+  border-color: #22c55e;
+}
+
+.bmi-circle.overweight {
+  border-color: #eab308;
+}
+
+.bmi-circle.obese {
+  border-color: #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .header-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .bmi-circle {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .bmi-value {
+    font-size: 1.25rem;
+  }
+}
