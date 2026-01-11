@@ -1,10 +1,15 @@
+// A constructor function is a special type of function designed to create and initialize objects when called with the new keyword
+
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement;
     this.currentOperandTextElement = currentOperandTextElement;
     this.clear();
+    
+    
   }
 
+  // This will reset everything to default
   clear() {
     this.currentOperand = "0";
     this.previousOperand = "";
@@ -12,7 +17,9 @@ class Calculator {
     this.resetScreen = false;
   }
 
+  // This is for the backspace functionality
   delete() {
+    // This is to check if the values length of this.currentOperand (a string) is exactly single-digit numbers like "5" or "0".
     if (
       this.currentOperand.length === 1 ||
       (this.currentOperand.length === 2 && this.currentOperand.startsWith("-"))
@@ -20,33 +27,39 @@ class Calculator {
       this.currentOperand = "0";
     } else {
       this.currentOperand = this.currentOperand.toString().slice(0, -1);
+      // Removes the last character from the string. For example: "123" becomes "12". and "-123" becomes "-12".
     }
   }
 
+  // This is to get hold of the Number inputed by the user
   appendNumber(number) {
-    if (number === "." && this.currentOperand.includes(".")) return;
+    if (number === "." && this.currentOperand.includes(".")) return; //This is to  prevents multiple decimals in a single number, like "12.34." becoming invalid.
     if (this.resetScreen) {
       this.currentOperand = "";
       this.resetScreen = false;
     }
     if (this.currentOperand === "0" && number !== ".") {
-      this.currentOperand = number.toString();
+      this.currentOperand = number.toString(); // This is to Replaces "0" with the new number (e.g., "0" + "5" becomes "5", not "05").
     } else {
-      this.currentOperand = this.currentOperand.toString() + number.toString();
+      this.currentOperand = this.currentOperand.toString() + number. toString(); // This is to Concatenates the new number to the end of this.currentOperand. Ensures both are strings (e.g., "12" + "3" = "123", or "45" + "." = "45.").
+
+
     }
   }
 
+  // This is to decide what to do with the operator chosen by the user
   chooseOperation(operation) {
     if (this.currentOperand === "") return;
     if (this.previousOperand !== "") {
-      this.compute();
+      this.calculate();
     }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = "";
   }
 
-  compute() {
+  // This will perform the calculations for the simple arithmetic operations such as - + / e.t.c
+  calculate() {
     let computation;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
@@ -66,7 +79,7 @@ class Calculator {
         computation = prev / current;
         break;
       case "x^y":
-        computation = Math.pow(prev, current);
+        computation = Math.pow(prev, current); //This is a JavaScript expression using the Math.pow() method, which calculates exponentiation (raising a base number to a power)
         break;
       default:
         return;
@@ -78,6 +91,7 @@ class Calculator {
     this.resetScreen = true;
   }
 
+  // This is for the scientific calculations
   scientificFunction(func) {
     const current = parseFloat(this.currentOperand);
     if (isNaN(current)) return;
@@ -89,9 +103,9 @@ class Calculator {
       case "square":
         this.currentOperand = Math.pow(current, 2).toString();
         break;
-      case "cube":
-        this.currentOperand = Math.pow(current, 3).toString();
-        break;
+      // case "cube":
+      //   this.currentOperand = Math.pow(current, 3).toString();
+      //   break;
       case "sin":
         this.currentOperand = Math.sin((current * Math.PI) / 180).toString();
         break;
@@ -104,30 +118,30 @@ class Calculator {
       case "log":
         this.currentOperand = Math.log10(current).toString();
         break;
-      case "ln":
-        this.currentOperand = Math.log(current).toString();
-        break;
-      case "pi":
-        this.currentOperand = Math.PI.toString();
-        break;
+      // case "ln":
+      //   this.currentOperand = Math.log(current).toString();
+      //   break;
+      // case "pi":
+      //   this.currentOperand = Math.PI.toString();
+      //   break;
       case "factorial":
         this.currentOperand = this.factorial(current).toString();
         break;
-      case "reciprocal":
-        this.currentOperand = (1 / current).toString();
-        break;
-      case "exp":
-        this.currentOperand = Math.exp(current).toString();
-        break;
-      case "ten-power":
-        this.currentOperand = Math.pow(10, current).toString();
-        break;
-      case "percentage":
-        this.currentOperand = (current / 100).toString();
-        break;
-      case "plus-minus":
-        this.currentOperand = (current * -1).toString();
-        break;
+      // case "reciprocal":
+      //   this.currentOperand = (1 / current).toString();
+      //   break;
+      // case "exp":
+      //   this.currentOperand = Math.exp(current).toString();
+      //   break;
+      // case "ten-power":
+      //   this.currentOperand = Math.pow(10, current).toString();
+      //   break;
+      // case "percentage":
+      //   this.currentOperand = (current / 100).toString();
+      //   break;
+      // case "plus-minus":
+      //   this.currentOperand = (current * -1).toString();
+      //   break;
       default:
         return;
     }
@@ -159,8 +173,8 @@ const operationButtons = document.querySelectorAll("[data-action]");
 const equalsButton = document.querySelector('[data-action="equals"]');
 const deleteButton = document.querySelector('[data-action="backspace"]');
 const clearButton = document.querySelector('[data-action="clear"]');
-const previousOperandTextElement = document.getElementById("previous-operand");
-const currentOperandTextElement = document.getElementById("current-operand");
+const previousOperandTextElement = document.getElementById("previousOperand");
+const currentOperandTextElement = document.getElementById("currentOperand");
 
 const calculator = new Calculator(
   previousOperandTextElement,
@@ -169,7 +183,8 @@ const calculator = new Calculator(
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    calculator.appendNumber(button.innerText);
+    
+    calculator.calculate();
     calculator.updateDisplay();
   });
 });
@@ -186,17 +201,17 @@ operationButtons.forEach((button) => {
   });
 });
 
-equalsButton.addEventListener("click", (button) => {
-  calculator.compute();
+equalsButton.addEventListener("click", () => {
+  calculator.calculate();
   calculator.updateDisplay();
 });
 
-clearButton.addEventListener("click", (button) => {
+clearButton.addEventListener("click", () => {
   calculator.clear();
   calculator.updateDisplay();
 });
 
-deleteButton.addEventListener("click", (button) => {
+deleteButton.addEventListener("click", () => {
   calculator.delete();
   calculator.updateDisplay();
 });
@@ -214,7 +229,7 @@ document.addEventListener("keydown", (e) => {
     calculator.chooseOperation(operation);
     calculator.updateDisplay();
   } else if (e.key === "Enter" || e.key === "=") {
-    calculator.compute();
+    calculator.calculate();
     calculator.updateDisplay();
   } else if (e.key === "Backspace") {
     calculator.delete();

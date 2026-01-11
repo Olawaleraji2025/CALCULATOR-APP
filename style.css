@@ -1,0 +1,42 @@
+/* Base styles */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Calculator button styles */
+.calc-btn {
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.calc-btn:active {
+  transform: scale(0.95);
+}
+
+/* Input field styles */
+.calc-input {
+  caret-color: transparent;
+}
+
+/* Animation for calculator display */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.calc-display {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .calc-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

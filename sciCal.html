@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scientific Calculator | Calciverse</title>
+    <title>Scientific Calculator</title>
     <link rel="stylesheet" href="sciCal.css" />
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,7 +14,6 @@
     />
   </head>
   <body>
-    <custom-navbar></custom-navbar>
 
     <main class="container">
       <div class="max-width-wrapper">
@@ -26,8 +25,8 @@
         <div class="calculator-card">
           <!-- Display -->
           <div class="display">
-            <div class="previous-operand" id="previous-operand"></div>
-            <div class="current-operand" id="current-operand">0</div>
+            <div class="previous-operand" id="previousOperand"></div>
+            <div class="current-operand" id="currentOperand">0</div>
           </div>
 
           <!-- Buttons -->
@@ -35,7 +34,7 @@
             <!-- Row 1 -->
             <button class="calc-btn btn-gray" data-action="clear">C</button>
             <button class="calc-btn btn-gray" data-action="backspace">CE</button>
-            <button class="calc-btn btn-gray" data-action="percentage">%</button>
+            <!-- <button class="calc-btn btn-gray" data-action="percentage">%</button> -->
             <button class="calc-btn btn-indigo" data-action="sqrt">√</button>
             <button class="calc-btn btn-indigo" data-action="power">x^y</button>
 
@@ -43,55 +42,54 @@
             <button class="calc-btn btn-indigo" data-action="sin">sin</button>
             <button class="calc-btn btn-indigo" data-action="cos">cos</button>
             <button class="calc-btn btn-indigo" data-action="tan">tan</button>
-            <button class="calc-btn btn-gray" data-action="divide">÷</button>
             <button class="calc-btn btn-indigo" data-action="factorial">x!</button>
 
             <!-- Row 3 -->
             <button class="calc-btn btn-indigo" data-action="log">log</button>
-            <button class="calc-btn btn-indigo" data-action="ln">ln</button>
-            <button class="calc-btn btn-indigo" data-action="pi">π</button>
-            <button class="calc-btn btn-gray" data-action="multiply">×</button>
-            <button class="calc-btn btn-indigo" data-action="reciprocal">1/x</button>
+            <!-- <button class="calc-btn btn-indigo" data-action="ln">ln</button>
+            <button class="calc-btn btn-indigo" data-action="pi">π</button> -->
+            <!-- <button class="calc-btn btn-indigo" data-action="factorial">x!</button> -->
+            <!-- <button class="calc-btn btn-gray" data-action="multiply">×</button> -->
+            <!-- <button class="calc-btn btn-indigo" data-action="reciprocal">1/x</button> -->
 
             <!-- Row 4 -->
             <button class="calc-btn btn-gray" data-number="7">7</button>
             <button class="calc-btn btn-gray" data-number="8">8</button>
             <button class="calc-btn btn-gray" data-number="9">9</button>
-            <button class="calc-btn btn-gray" data-action="subtract">-</button>
-            <button class="calc-btn btn-indigo" data-action="exp">e^x</button>
+            <button class="calc-btn btn-gray" data-action="divide">÷</button>
+            <!-- <button class="calc-btn btn-indigo" data-action="exp">e^x</button> -->
 
             <!-- Row 5 -->
             <button class="calc-btn btn-gray" data-number="4">4</button>
             <button class="calc-btn btn-gray" data-number="5">5</button>
             <button class="calc-btn btn-gray" data-number="6">6</button>
-            <button class="calc-btn btn-gray" data-action="add">+</button>
-            <button class="calc-btn btn-indigo" data-action="ten-power">10^x</button>
+            <button class="calc-btn btn-gray" data-action="multiply">×</button>
+            <!-- <button class="calc-btn btn-indigo" data-action="ten-power">10^x</button> -->
 
             <!-- Row 6 -->
             <button class="calc-btn btn-gray" data-number="1">1</button>
             <button class="calc-btn btn-gray" data-number="2">2</button>
             <button class="calc-btn btn-gray" data-number="3">3</button>
-            <button class="calc-btn btn-primary btn-wide" data-action="equals">=</button>
+            <button class="calc-btn btn-gray" data-action="subtract">-</button>
 
             <!-- Row 7 -->
             <button class="calc-btn btn-gray" data-number="0">0</button>
             <button class="calc-btn btn-gray" data-number=".">.</button>
-            <button class="calc-btn btn-gray" data-action="plus-minus">±</button>
-            <button class="calc-btn btn-indigo" data-action="square">x²</button>
-            <button class="calc-btn btn-indigo" data-action="cube">x³</button>
+            <button class="calc-btn btn-gray" data-action="add">+</button>
+            <button class="calc-btn btn-primary btn-wide" data-action="equals">=</button>
+            <!-- <button class="calc-btn btn-gray" data-action="plus-minus">±</button> -->
+            <!-- <button class="calc-btn btn-indigo" data-action="square">x²</button>
+            <button class="calc-btn btn-indigo" data-action="cube">x³</button>  -->
           </div>
         </div>
 
-        <div class="tip-section">
+        <!-- <div class="tip-section">
           <p>Tip: Use keyboard for faster calculations</p>
-        </div>
+        </div> -->
       </div>
     </main>
 
-    <custom-footer></custom-footer>
-
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
+    <!-- <script src="cal.js"></script> -->
     <script src="sciCal.js"></script>
     <script>
       feather.replace();

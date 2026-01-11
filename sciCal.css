@@ -74,7 +74,7 @@ body {
 /* Button Grid */
 .button-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.25rem;
   padding: 0.5rem;
   background-color: #f3f4f6;
@@ -128,7 +128,7 @@ body {
 
 /* Wide Button (Equals spans 2 columns) */
 .btn-wide {
-  grid-column: span 2;
+  grid-column: span 4;
 }
 
 /* Tip Section */
