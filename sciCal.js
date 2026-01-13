@@ -183,8 +183,7 @@ const calculator = new Calculator(
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    
-    calculator.calculate();
+    calculator.appendNumber(button.innerHTML);
     calculator.updateDisplay();
   });
 });
@@ -216,7 +215,7 @@ deleteButton.addEventListener("click", () => {
   calculator.updateDisplay();
 });
 
-// Keyboard support
+// for keyboard users 
 document.addEventListener("keydown", (e) => {
   if (e.key >= 0 && e.key <= 9) {
     calculator.appendNumber(e.key);
@@ -237,8 +236,5 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "Escape") {
     calculator.clear();
     calculator.updateDisplay();
-  } else if (e.key === "%") {
-    calculator.scientificFunction("percentage");
-    calculator.updateDisplay();
-  }
+  } 
 });
