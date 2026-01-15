@@ -3,103 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calciverse: Calculator Hub</title>
+    <title>Calculator Hub</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-gray-50 font-['Inter'] min-h-screen">
+  <body>
     <custom-navbar></custom-navbar>
 
-    <main class="container mx-auto px-4 py-12">
-      <div class="text-center mb-16">
-        <h1 class="text-5xl font-bold text-gray-800 mb-4">Calciverse</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Your ultimate hub for all calculation needs. Choose from our
-          specialized calculators below.
+    <main class="main-container">
+      <div class="hero-section">
+        <h1 class="main-title">Calculator Hub</h1>
+        <p class="hero-description">
+          Your ultimate hub for all calculation needs.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="calculator-grid">
         <!-- Scientific Calculator Card -->
-        <div
-          class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105"
-        >
-          <div
-            class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
-          >
-            <i data-feather="cpu" class="w-16 h-16 text-white"></i>
+        <div class="calculator-card">
+          <div class="card-header sci-header">
+            <i data-feather="cpu" class="icon"></i>
           </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+          <div class="card-content">
+            <h3 class="card-title">
               Scientific Calculator
             </h3>
-            <p class="text-gray-600 mb-6">
+            <p class="card-description">
               Advanced calculations with trigonometric, logarithmic, and power
               functions.
             </p>
-            <a
-              href="sciCal.html"
-              class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-colors"
-            >
+            <a href="Sci Calculator/index.html" class="open-calculator-btn btn-indigo">
               Open Calculator
             </a>
           </div>
         </div>
 
         <!-- BMI Calculator Card -->
-        <div
-          class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105"
-        >
-          <div
-            class="h-48 bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center"
-          >
-            <i data-feather="activity" class="w-16 h-16 text-white"></i>
+        <div class="calculator-card">
+          <div class="card-header bmi-header">
+            <i data-feather="activity" class="icon"></i>
           </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+          <div class="card-content">
+            <h3 class="card-title">
               BMI Calculator
             </h3>
-            <p class="text-gray-600 mb-6">
+            <p class="card-description">
               Calculate your Body Mass Index and understand your health
               category.
             </p>
-            <a
-              href="bmi.html"
-              class="inline-block px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
-            >
+            <a href="BMI Calculator/index.html" class="open-calculator-btn btn-emerald">
               Open Calculator
             </a>
           </div>
         </div>
 
         <!-- Age Calculator Card -->
-        <div
-          class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105"
-        >
-          <div
-            class="h-48 bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center"
-          >
-            <i data-feather="calendar" class="w-16 h-16 text-white"></i>
+        <div class="calculator-card">
+          <div class="card-header age-header">
+            <i data-feather="calendar" class="icon"></i>
           </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+          <div class="card-content">
+            <h3 class="card-title">
               Age Calculator
             </h3>
-            <p class="text-gray-600 mb-6">
+            <p class="card-description">
               Find your exact age and days until your next birthday.
             </p>
-            <a
-              href="age.html"
-              class="inline-block px-6 py-3 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors"
-            >
+            <a href="Age Calculator/index.html" class="open-calculator-btn btn-amber">
               Open Calculator
             </a>
           </div>
@@ -107,13 +80,6 @@
       </div>
     </main>
 
-    <custom-footer></custom-footer>
-
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
     <script src="script.js"></script>
-    <script>
-      feather.replace();
-    </script>
-  </body>
+  
 </html>

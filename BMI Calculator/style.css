@@ -126,8 +126,6 @@ body {
   outline: none;
   border-color: #10b981;
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-  /* ring: 2px;
-  ring-color: #10b981; */
 }
 
 .input-row {

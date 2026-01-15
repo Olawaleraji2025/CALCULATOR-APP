@@ -126,7 +126,7 @@ body {
   background-color: #4f46e5;
 }
 
-/* Wide Button (Equals spans 2 columns) */
+/* Wide Button (Equals spans 4 columns) */
 .btn-wide {
   grid-column: span 4;
 }

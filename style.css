@@ -1,6 +1,135 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+}
+
+
 /* Base styles */
 body {
   scroll-behavior: smooth;
+  background-color: #f9fafb;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+main > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+main > div:last-child > div {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.15s ease-in-out;
+}
+
+main > div:last-child > div:hover {
+  transform: scale(1.05);
+}
+
+main > div:last-child > div > div:first-child {
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main > div:last-child > div:nth-child(1) > div:first-child {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+}
+
+main > div:last-child > div:nth-child(2) > div:first-child {
+  background: linear-gradient(to right, #10b981, #14b8a6);
+}
+
+main > div:last-child > div:nth-child(3) > div:first-child {
+  background: linear-gradient(to right, #f59e0b, #fb923c);
+}
+
+i {
+  width: 4rem;
+  height: 4rem;
+  color: white;
+}
+
+main > div:last-child > div > div:last-child {
+  padding: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+main > div:last-child > div > div:last-child p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.open-calculator-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-indigo {
+  background-color: #6366f1;
+  color: white;
+}
+
+.btn-indigo:hover {
+  background-color: #4f46e5;
+}
+
+.btn-emerald {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-emerald:hover {
+  background-color: #059669;
+}
+
+.btn-amber {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.btn-amber:hover {
+  background-color: #d97706;
 }
 
 /* Calculator button styles */
@@ -34,7 +163,19 @@ body {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Responsive adjustments */
+/* Responsiveness using media queries */
+@media (min-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .calculator-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
   .calc-grid {
     grid-template-columns: repeat(4, 1fr);
