@@ -37,13 +37,13 @@ body {
   margin: 0 auto;
 }
 
-main > div:last-child {
+.calculator-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
 }
 
-main > div:last-child > div {
+.calculator-card {
   background-color: white;
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -51,26 +51,26 @@ main > div:last-child > div {
   transition: transform 0.15s ease-in-out;
 }
 
-main > div:last-child > div:hover {
+.calculator-card:hover {
   transform: scale(1.05);
 }
 
-main > div:last-child > div > div:first-child {
+.card-header {
   height: 12rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-main > div:last-child > div:nth-child(1) > div:first-child {
+.sci-header {
   background: linear-gradient(to right, #6366f1, #8b5cf6);
 }
 
-main > div:last-child > div:nth-child(2) > div:first-child {
+.bmi-header {
   background: linear-gradient(to right, #10b981, #14b8a6);
 }
 
-main > div:last-child > div:nth-child(3) > div:first-child {
+.age-header {
   background: linear-gradient(to right, #f59e0b, #fb923c);
 }
 
@@ -80,18 +80,18 @@ i {
   color: white;
 }
 
-main > div:last-child > div > div:last-child {
+.card-content {
   padding: 1.5rem;
 }
 
-h3 {
+.card-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 0.5rem;
 }
 
-main > div:last-child > div > div:last-child p {
+.card-description {
   color: #4b5563;
   margin-bottom: 1.5rem;
 }
@@ -108,6 +108,12 @@ main > div:last-child > div > div:last-child p {
 .btn-indigo {
   background-color: #6366f1;
   color: white;
+}
+
+.image-card{
+  width: 100%;
+    object-fit: cover;
+    height: 100%;
 }
 
 .btn-indigo:hover {
@@ -135,17 +141,13 @@ main > div:last-child > div > div:last-child p {
 /* Calculator button styles */
 .calc-btn {
   transition: all 0.2s ease;
-  user-select: none;
 }
 
 .calc-btn:active {
   transform: scale(0.95);
 }
 
-/* Input field styles */
-.calc-input {
-  caret-color: transparent;
-}
+
 
 /* Animation for calculator display */
 @keyframes fadeIn {
@@ -164,17 +166,21 @@ main > div:last-child > div > div:last-child p {
 }
 
 /* Responsiveness using media queries */
-@media (min-width: 768px) {
-  .calculator-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 @media (min-width: 1024px) {
   .calculator-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+@media (min-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 
 @media (max-width: 640px) {
   .calc-grid {
