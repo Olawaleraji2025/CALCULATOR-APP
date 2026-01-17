@@ -20,3 +20,5 @@ Ever wondered exactly how old you are down to the day? Pop in your birthdate, an
 - **HTML**: The structure of the pages.
 - **CSS**: For that beautiful, responsive design.
 - **JavaScript**: Powers the calculations and interactivity.
+
+Here is the live project: https://calculator-hub-007.netlify.app
