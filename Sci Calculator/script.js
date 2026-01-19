@@ -78,7 +78,7 @@ class Calculator {
       case "÷":
         computation = prev / current;
         break;
-      case "x^y":
+      case "^":
         computation = Math.pow(prev, current); //This is a JavaScript expression using the Math.pow() method, which calculates exponentiation (raising a base number to a power)
         break;
       default:
@@ -118,30 +118,11 @@ class Calculator {
       case "log":
         this.currentOperand = Math.log10(current).toString();
         break;
-      // case "ln":
-      //   this.currentOperand = Math.log(current).toString();
-      //   break;
-      // case "pi":
-      //   this.currentOperand = Math.PI.toString();
-      //   break;
+     
       case "factorial":
         this.currentOperand = this.factorial(current).toString();
         break;
-      // case "reciprocal":
-      //   this.currentOperand = (1 / current).toString();
-      //   break;
-      // case "exp":
-      //   this.currentOperand = Math.exp(current).toString();
-      //   break;
-      // case "ten-power":
-      //   this.currentOperand = Math.pow(10, current).toString();
-      //   break;
-      // case "percentage":
-      //   this.currentOperand = (current / 100).toString();
-      //   break;
-      // case "plus-minus":
-      //   this.currentOperand = (current * -1).toString();
-      //   break;
+     
       default:
         return;
     }
@@ -191,7 +172,7 @@ numberButtons.forEach((button) => {
 operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const action = button.getAttribute("data-action");
-    if (["+", "-", "×", "÷", "x^y"].includes(action)) {
+    if (["+", "-", "×", "÷", "^"].includes(action)) {
       calculator.chooseOperation(action);
     } else {
       calculator.scientificFunction(action);
